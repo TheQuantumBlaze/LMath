@@ -168,13 +168,10 @@ namespace LMath
             for (int i = n1.Numbers.Count - 1; i >= 0; i--)
             {
                 int? currentNum = n1.Numbers[i];
-                BigInt reverseHolder = new BigInt();
-                reverseHolder.Numbers.Add(currentNum);
-                for (int j = 0; j < carry.Numbers.Count; j++)
-                {
-                    reverseHolder.Numbers.Add(carry.Numbers[j]);
-                }
-                ans.Numbers.Add(MiniDivide(reverseHolder,n2,out carry));
+                var sCarry = carry.ToString();
+                sCarry += currentNum.ToString();
+                carry = BigInt.Parse(sCarry);
+                ans.Numbers.Add(MiniDivide(carry,n2,out carry));
             }
             BigInt holder = new BigInt();
             for (int i = ans.Numbers.Count - 1; i >= 0; i--)
