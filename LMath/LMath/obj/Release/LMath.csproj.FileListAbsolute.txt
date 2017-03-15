@@ -1,0 +1,4 @@
+C:\Users\user\Documents\GitHub\LMath\LMath\LMath\bin\Release\LMath.dll
+C:\Users\user\Documents\GitHub\LMath\LMath\LMath\bin\Release\LMath.pdb
+C:\Users\user\Documents\GitHub\LMath\LMath\LMath\obj\Release\LMath.dll
+C:\Users\user\Documents\GitHub\LMath\LMath\LMath\obj\Release\LMath.pdb
