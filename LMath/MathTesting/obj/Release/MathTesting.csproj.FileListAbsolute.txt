@@ -1,0 +1,8 @@
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\bin\Release\MathTesting.exe.config
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\bin\Release\MathTesting.exe
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\bin\Release\MathTesting.pdb
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\bin\Release\LMath.dll
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\bin\Release\LMath.pdb
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\obj\Release\MathTesting.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\obj\Release\MathTesting.exe
+C:\Users\user\Documents\GitHub\LMath\LMath\MathTesting\obj\Release\MathTesting.pdb

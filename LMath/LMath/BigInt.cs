@@ -22,6 +22,13 @@ namespace LMath
             this.Numbers = b.Numbers;
         }
 
+        public BigInt(int num)
+        {
+            Numbers = new List<int?>();
+            var b = Parse(num.ToString());
+            this.Numbers = b.Numbers;
+        }
+
         public static BigInt Parse(string number)
         {
             BigInt finalNumber = new BigInt();
@@ -154,6 +161,41 @@ namespace LMath
             return ans;
         }
 
+        public static BigInt operator /(BigInt n1, BigInt n2)
+        {
+            BigInt ans = new BigInt();
+            BigInt carry = new BigInt();
+            for (int i = n1.Numbers.Count - 1; i >= 0; i--)
+            {
+                int? currentNum = n1.Numbers[i];
+                BigInt reverseHolder = new BigInt();
+                reverseHolder.Numbers.Add(currentNum);
+                for (int j = 0; j < carry.Numbers.Count; j++)
+                {
+                    reverseHolder.Numbers.Add(carry.Numbers[j]);
+                }
+                ans.Numbers.Add(MiniDivide(reverseHolder,n2,out carry));
+            }
+            BigInt holder = new BigInt();
+            for (int i = ans.Numbers.Count - 1; i >= 0; i--)
+            {
+                holder.Numbers.Add(ans.Numbers[i]);
+            }
+            return holder;
+        }
+
+        private static int? MiniDivide(BigInt num, BigInt divisor, out BigInt carry)
+        {
+            int? ans = 0;
+            while (num >= divisor)
+            {
+                ans += 1;
+                num -= divisor;
+            }
+            carry = num;
+            return ans;
+        }
+
         public static bool operator ==(BigInt n1, BigInt n2)
         {
             if (n1.Numbers.Count < n2.Numbers.Count)
@@ -212,11 +254,15 @@ namespace LMath
                 }
             }
 
-            for (int i = n1.Numbers.Count - 1; i >= 0; i++)
+            for (int i = n1.Numbers.Count - 1; i >= 0; i--)
             {
                 if (n1.Numbers[i] < n2.Numbers[i])
                 {
                     return true;
+                }
+                else if (n1.Numbers[i] > n2.Numbers[i])
+                {
+                    return false;
                 }
             }
 
@@ -242,11 +288,15 @@ namespace LMath
                 }
             }
 
-            for (int i = n1.Numbers.Count - 1; i >= 0; i++)
+            for (int i = n1.Numbers.Count - 1; i >= 0; i--)
             {
                 if (n1.Numbers[i] > n2.Numbers[i])
                 {
                     return true;
+                }
+                else if(n1.Numbers[i] < n2.Numbers[i])
+                {
+                    return false;
                 }
             }
             return false;
