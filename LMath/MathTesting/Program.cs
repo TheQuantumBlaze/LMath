@@ -18,7 +18,7 @@ namespace MathTesting
                 BigInt m = new BigInt(s);
                 string s1 = Console.ReadLine();
                 BigInt m1 = new BigInt(s1);
-                Console.WriteLine((m/m1).ToString());
+                Console.WriteLine((m%m1).ToString());
                 Console.ReadKey();
             }
         }

@@ -184,6 +184,15 @@ namespace LMath
             return holder;
         }
 
+        public static BigInt operator %(BigInt n1, BigInt n2)
+        {
+            BigInt ans = new BigInt();
+            ans = n1/n2;
+            ans *= n2;
+            ans = n1 - ans;
+            return ans;
+        }
+
         private static int? MiniDivide(BigInt num, BigInt divisor, out BigInt carry)
         {
             int? ans = 0;
